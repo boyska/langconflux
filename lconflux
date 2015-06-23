@@ -1,0 +1,31 @@
+#!/usr/bin/env python2.7
+from optparse import OptionParser
+
+from langconfluxer import Pseudolanguage
+
+if __name__ == '__main__':
+    usage = "usage: %prog [options] datafile1 [datafile2 ...]"
+    parser = OptionParser(usage=usage, version="%prog 1.0")
+    parser.add_option("-d", "--dump", action="store_true",
+                      dest="dump", default=False,
+                      help="Dump internal representation of the pseudolanguage")
+    parser.add_option("-g", "--generate", type="int", dest="num",
+                      help="Generate specified number of words")
+    parser.add_option("--min", type="int", dest="min", default=3,
+                      help="Set the minimum length of each word")
+    parser.add_option("--max", type="int", dest="max", default=9,
+                      help="Set the maximum length of each word")
+    parser.add_option("--name", dest="name", default=' ',
+                      help="Set the name of the pseudolanguage")
+    (options, args) = parser.parse_args()
+    if not args:
+        parser.error("incorrect number of arguments")
+
+    aLanguage = Pseudolanguage(name=options.name)
+    aLanguage.incorporate(args)
+    if options.dump:
+        aLanguage.dump()
+    else:
+        results = aLanguage.generate(options.num, options.min, options.max)
+        for word in results:
+            print word
