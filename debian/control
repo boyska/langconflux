@@ -1,0 +1,17 @@
+Source: langconflux
+Section: net
+Priority: optional
+Maintainer: freepto devs <freepto@autistici.org>
+Homepage: https://github.com/avana-bbs/langconflux
+Vcs-Browser: https://github.com/avana-bbs/langconflux
+Vcs-Git: https://github.com/avana-bbs/langconflux.git
+Build-Depends: debhelper (>= 9), python, python-distutils-extra
+Standards-Version: 3.9.6
+
+Package: langconflux
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: generate pseudorandom words
+ Utility to generate pseudorandom words based on an existing
+ corpus. The words it will generate are fonetically similar to the
+ ones in the corpus

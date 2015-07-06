@@ -1,0 +1,7 @@
+Name: langconflux
+Source: http://github.com/avana-bbs/langconflux
+
+Copyright: 2009-2015, Tails developers <tails@boum.org>
+License: GPL-3+
+ On Debian systems the full text of the GNU General Public 
+ License can be found in the `/usr/share/common-licenses/GPL-3'
